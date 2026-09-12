@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>QuizVerse – Eredmény</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="eredmeny">
+
+        <div class="logo">
+            🌌 QUIZVERSE
+        </div>
+
+        <h1>🎉 Kvíz vége!</h1>
+
+        <p id="koszontes">
+            Gratulálunk!
+        </p>
+
+        <div class="pont-kartya">
+
+            <p>Elért pontszám:</p>
+
+            <div id="vegsoPont">
+                0
+            </div>
+
+            <p>pont</p>
+
+        </div>
+
+        <div class="jatekos-adatok">
+
+            <p>
+                👤 Játékos:
+                <strong id="jatekosNev"></strong>
+            </p>
+
+            <p>
+                🌍 Ország:
+                <strong id="jatekosOrszag"></strong>
+            </p>
+
+        </div>
+
+        <button onclick="ujJatek()">
+            🔄 Új játék
+        </button>
+
+        <button
+            class="ranglista-gomb"
+            onclick="ranglista()"
+        >
+            🏆 Ranglista
+        </button>
+
+    </div>
+
+    <script src="eredmeny.js"></script>
+
+</body>
+
+</html>
 
