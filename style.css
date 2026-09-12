@@ -280,3 +280,66 @@ h3 {
     }
 
 }
+.eredmeny {
+    width: 100%;
+    max-width: 600px;
+
+    text-align: center;
+}
+
+.eredmeny h1 {
+    margin-bottom: 10px;
+}
+
+.pont-kartya {
+    margin: 30px auto;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border:
+        1px solid
+        rgba(168, 85, 247, 0.4);
+
+    box-shadow:
+        0 0 35px
+        rgba(168, 85, 247, 0.15);
+}
+
+.pont-kartya p {
+    margin: 5px;
+}
+
+#vegsoPont {
+    font-size: 80px;
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a855f7,
+            #38bdf8
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin: 10px 0;
+}
+
+.jatekos-adatok {
+    margin-bottom: 20px;
+}
+
+.jatekos-adatok p {
+    margin: 10px;
+}
+
+.jatekos-adatok strong {
+    color: #c084fc;
+}
