@@ -1,136 +1,213 @@
-const kerdesek = [
+const kategoriak = {
 
-    {
-        kerdes: "Mi Magyarország fővárosa?",
+    jatek: [
+        {
+            kerdes: "Melyik játékban található a Creeper?",
+            valaszok: [
+                "Minecraft",
+                "Fortnite",
+                "Roblox",
+                "Among Us"
+            ],
+            helyes: 0
+        },
+        {
+            kerdes: "Ki a Super Mario játékok főszereplője?",
+            valaszok: [
+                "Luigi",
+                "Mario",
+                "Link",
+                "Sonic"
+            ],
+            helyes: 1
+        },
+        {
+            kerdes: "Melyik cég készítette a PlayStationt?",
+            valaszok: [
+                "Microsoft",
+                "Nintendo",
+                "Sony",
+                "Valve"
+            ],
+            helyes: 2
+        }
+    ],
 
-        valaszok: [
-            "Debrecen",
-            "Budapest",
-            "Szeged",
-            "Pécs"
-        ],
+    zene: [
+        {
+            kerdes: "Hány húros egy hagyományos gitár?",
+            valaszok: [
+                "4",
+                "5",
+                "6",
+                "7"
+            ],
+            helyes: 2
+        },
+        {
+            kerdes: "Melyik hangszernek vannak billentyűi?",
+            valaszok: [
+                "Gitár",
+                "Zongora",
+                "Dob",
+                "Hegedű"
+            ],
+            helyes: 1
+        },
+        {
+            kerdes: "Melyik műfajhoz kapcsolódik leginkább a DJ-kultúra?",
+            valaszok: [
+                "EDM",
+                "Country",
+                "Blues",
+                "Opera"
+            ],
+            helyes: 0
+        }
+    ],
 
-        helyes: 1
-    },
+    film: [
+        {
+            kerdes: "Melyik filmben szerepel Jack Sparrow?",
+            valaszok: [
+                "Titanic",
+                "A Karib-tenger kalózai",
+                "Avatar",
+                "Mátrix"
+            ],
+            helyes: 1
+        },
+        {
+            kerdes: "Mi a Harry Potter történetekben szereplő varázslóiskola neve?",
+            valaszok: [
+                "Roxfort",
+                "Narnia",
+                "Nevermore",
+                "Camelot"
+            ],
+            helyes: 0
+        },
+        {
+            kerdes: "Ki Bruce Wayne?",
+            valaszok: [
+                "Superman",
+                "Vasember",
+                "Batman",
+                "Pókember"
+            ],
+            helyes: 2
+        }
+    ],
 
-    {
-        kerdes: "Hány kontinens van a Földön?",
+    foldrajz: [
+        {
+            kerdes: "Mi Franciaország fővárosa?",
+            valaszok: [
+                "London",
+                "Párizs",
+                "Berlin",
+                "Madrid"
+            ],
+            helyes: 1
+        },
+        {
+            kerdes: "Melyik a Föld legnagyobb óceánja?",
+            valaszok: [
+                "Atlanti-óceán",
+                "Indiai-óceán",
+                "Csendes-óceán",
+                "Jeges-tenger"
+            ],
+            helyes: 2
+        },
+        {
+            kerdes: "Melyik országot szokták csizma alakúként emlegetni?",
+            valaszok: [
+                "Spanyolország",
+                "Olaszország",
+                "Görögország",
+                "Portugália"
+            ],
+            helyes: 1
+        }
+    ],
 
-        valaszok: [
-            "5",
-            "6",
-            "7",
-            "8"
-        ],
+    sport: [
+        {
+            kerdes: "Hány játékos van egy futballcsapatban a pályán?",
+            valaszok: [
+                "9",
+                "10",
+                "11",
+                "12"
+            ],
+            helyes: 2
+        },
+        {
+            kerdes: "Melyik sportban használnak ütőt és labdát?",
+            valaszok: [
+                "Tenisz",
+                "Úszás",
+                "Atlétika",
+                "Síelés"
+            ],
+            helyes: 0
+        },
+        {
+            kerdes: "Hány karika található az olimpiai jelképen?",
+            valaszok: [
+                "4",
+                "5",
+                "6",
+                "7"
+            ],
+            helyes: 1
+        }
+    ],
 
-        helyes: 2
-    },
+    altalanos: [
+        {
+            kerdes: "Hány napból áll egy szökőév?",
+            valaszok: [
+                "364",
+                "365",
+                "366",
+                "367"
+            ],
+            helyes: 2
+        },
+        {
+            kerdes: "Mi a H₂O?",
+            valaszok: [
+                "Oxigén",
+                "Hidrogén",
+                "Víz",
+                "Só"
+            ],
+            helyes: 2
+        },
+        {
+            kerdes: "Hány kontinens van a Földön?",
+            valaszok: [
+                "5",
+                "6",
+                "7",
+                "8"
+            ],
+            helyes: 2
+        }
+    ]
+};
 
-    {
-        kerdes: "Melyik a Naprendszer legnagyobb bolygója?",
 
-        valaszok: [
-            "Föld",
-            "Mars",
-            "Jupiter",
-            "Vénusz"
-        ],
+const kivalasztott =
+    localStorage.getItem(
+        "kivalasztottKategoria"
+    );
 
-        helyes: 2
-    },
 
-    {
-        kerdes: "Melyik évben kezdődött a második világháború?",
-
-        valaszok: [
-            "1939",
-            "1941",
-            "1945",
-            "1935"
-        ],
-
-        helyes: 0
-    },
-
-    {
-        kerdes: "Hány lába van egy póknak?",
-
-        valaszok: [
-            "6",
-            "8",
-            "10",
-            "12"
-        ],
-
-        helyes: 1
-    },
-
-    {
-        kerdes: "Melyik bolygót nevezik vörös bolygónak?",
-
-        valaszok: [
-            "Mars",
-            "Jupiter",
-            "Szaturnusz",
-            "Merkúr"
-        ],
-
-        helyes: 0
-    },
-
-    {
-        kerdes: "Melyik a világ legnagyobb óceánja?",
-
-        valaszok: [
-            "Atlanti-óceán",
-            "Indiai-óceán",
-            "Csendes-óceán",
-            "Jeges-tenger"
-        ],
-
-        helyes: 2
-    },
-
-    {
-        kerdes: "Hány játékos van egy focicsapatban a pályán?",
-
-        valaszok: [
-            "9",
-            "10",
-            "11",
-            "12"
-        ],
-
-        helyes: 2
-    },
-
-    {
-        kerdes: "Melyik állat a leggyorsabb szárazföldi állat?",
-
-        valaszok: [
-            "Oroszlán",
-            "Gepárd",
-            "Tigris",
-            "Ló"
-        ],
-
-        helyes: 1
-    },
-
-    {
-        kerdes: "Hány napból áll egy szökőév?",
-
-        valaszok: [
-            "364",
-            "365",
-            "366",
-            "367"
-        ],
-
-        helyes: 2
-    }
-
-];
+const kerdesek =
+    kategoriak[kivalasztott];
 
 
 let aktualisKerdes = 0;
@@ -157,24 +234,31 @@ function kerdesMegjelenitese() {
     ).textContent =
         adat.kerdes;
 
+
     const valaszok =
-        document.getElementById("valaszok");
+        document.getElementById(
+            "valaszok"
+        );
 
     valaszok.innerHTML = "";
+
 
     adat.valaszok.forEach(
         (valasz, index) => {
 
             const gomb =
-                document.createElement("button");
+                document.createElement(
+                    "button"
+                );
 
-            gomb.textContent = valasz;
+            gomb.textContent =
+                valasz;
 
             gomb.classList.add(
                 "valasz"
             );
 
-            gomb.onclick = function () {
+            gomb.onclick = () => {
 
                 valaszEllenorzese(
                     index,
@@ -183,8 +267,9 @@ function kerdesMegjelenitese() {
 
             };
 
-            valaszok.appendChild(gomb);
-
+            valaszok.appendChild(
+                gomb
+            );
         }
     );
 
@@ -210,10 +295,12 @@ function valaszEllenorzese(
             aktualisKerdes
         ].helyes;
 
+
     const gombok =
         document.querySelectorAll(
             ".valasz"
         );
+
 
     gombok.forEach(
         g => g.disabled = true
@@ -248,27 +335,25 @@ function valaszEllenorzese(
         `Pont: ${pont}`;
 
 
-    setTimeout(
-        () => {
+    setTimeout(() => {
 
-            aktualisKerdes++;
+        aktualisKerdes++;
 
-            if (
-                aktualisKerdes <
-                kerdesek.length
-            ) {
 
-                kerdesMegjelenitese();
+        if (
+            aktualisKerdes <
+            kerdesek.length
+        ) {
 
-            } else {
+            kerdesMegjelenitese();
 
-                eredmeny();
+        } else {
 
-            }
+            eredmeny();
 
-        },
-        900
-    );
+        }
+
+    }, 900);
 }
 
 
@@ -285,4 +370,3 @@ function eredmeny() {
 
 
 kerdesMegjelenitese();
-
